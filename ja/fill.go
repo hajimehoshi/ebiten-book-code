@@ -8,6 +8,9 @@ import (
 )
 
 func update(screen *ebiten.Image) error {
+	if ebiten.IsRunningSlowly() {
+		return nil
+	}
 	// 画面 (screen) を赤色で塗りつぶす。
 	// color.RGBAは (premultiplied-alphaな) 8bitカラーを表す。
 	if err := screen.Fill(color.RGBA{0xff, 0, 0, 0xff}); err != nil {
