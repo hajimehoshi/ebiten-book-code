@@ -14,8 +14,10 @@ func update(screen *ebiten.Image) error {
 	if ebiten.IsRunningSlowly() {
 		return nil
 	}
-	// ebitenImageを位置(20, 10)画面に描画する。
+	// ebitenImageを原点中心に2倍拡大した後、(20, 10) だけ平行移動する。
+	// 順番を変えると違う結果になることに注意。
 	op := &ebiten.DrawImageOptions{}
+	op.GeoM.Scale(2, 2)
 	op.GeoM.Translate(20, 10)
 	if err := screen.DrawImage(ebitenImage, op); err != nil {
 		return err
@@ -30,7 +32,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := ebiten.Run(update, 320, 240, 2, "Image Position"); err != nil {
+	if err := ebiten.Run(update, 320, 240, 2,
+		"Image Scale and Translate"); err != nil {
 		log.Fatal(err)
 	}
 }
