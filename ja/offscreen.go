@@ -65,6 +65,9 @@ func main() {
 		log.Fatal(err)
 	}
 	// オフスクリーンレンダリング用のバッファを作成する。
+	// 今回はmain関数内で生成した。
+	// なおebiten.Imageを生成する処理は重い処理であり、
+	// update関数内で毎フレーム生成するのは推奨されない。
 	offscreenImage, err = ebiten.NewImage(100, 100, ebiten.FilterNearest)
 	if err != nil {
 		log.Fatal(err)
