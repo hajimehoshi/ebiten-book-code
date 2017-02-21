@@ -10,7 +10,7 @@ import (
 
 var (
 	ebitenImageNearest *ebiten.Image
-	ebitenImageLinear *ebiten.Image
+	ebitenImageLinear  *ebiten.Image
 )
 
 func update(screen *ebiten.Image) error {

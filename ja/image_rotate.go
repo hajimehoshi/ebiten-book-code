@@ -18,7 +18,7 @@ func update(screen *ebiten.Image) error {
 	// ebitenImageを45度時計回りの向きに(原点中心に)回転させる。
 	// 45度はラジアンでπ/4である。
 	op := &ebiten.DrawImageOptions{}
-	op.GeoM.Rotate(math.Pi/4)
+	op.GeoM.Rotate(math.Pi / 4)
 	if err := screen.DrawImage(ebitenImage, op); err != nil {
 		return err
 	}

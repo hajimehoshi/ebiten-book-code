@@ -25,7 +25,7 @@ func update(screen *ebiten.Image) error {
 		return err
 	}
 	op := &ebiten.DrawImageOptions{}
-	op.GeoM.Scale(1 / scale, 1 / scale)
+	op.GeoM.Scale(1/scale, 1/scale)
 	if err := tmpImage.DrawImage(gopherImage, op); err != nil {
 		return err
 	}

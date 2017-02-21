@@ -21,7 +21,7 @@ func update(screen *ebiten.Image) error {
 	// 45度回転させる。
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Translate(-float64(w)/2, -float64(h)/2)
-	op.GeoM.Rotate(math.Pi/4)
+	op.GeoM.Rotate(math.Pi / 4)
 	op.GeoM.Translate(float64(w)/2, float64(h)/2)
 	if err := screen.DrawImage(ebitenImage, op); err != nil {
 		return err
