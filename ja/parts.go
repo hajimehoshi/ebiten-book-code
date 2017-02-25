@@ -68,7 +68,6 @@ func update(screen *ebiten.Image) error {
 	if ebiten.IsRunningSlowly() {
 		return nil
 	}
-	const scale = 4.0
 	// ImagePartsとしてfourPartsを指定する。
 	op := &ebiten.DrawImageOptions{}
 	op.ImageParts = &fourParts{gophersImage}
