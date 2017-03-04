@@ -17,9 +17,7 @@ func update(screen *ebiten.Image) error {
 	// ebitenImageを(原点中心に)2倍拡大する。
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(2, 2)
-	if err := screen.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImage, op)
 	return nil
 }
 

@@ -19,9 +19,7 @@ func update(screen *ebiten.Image) error {
 	// 45度はラジアンでπ/4である。
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Rotate(math.Pi / 4)
-	if err := screen.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImage, op)
 	return nil
 }
 

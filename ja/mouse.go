@@ -19,9 +19,7 @@ func update(screen *ebiten.Image) error {
 	if ebiten.IsRunningSlowly() {
 		return nil
 	}
-	if err := ebitenutil.DebugPrint(screen, msg); err != nil {
-		return err
-	}
+	ebitenutil.DebugPrint(screen, msg)
 	return nil
 }
 

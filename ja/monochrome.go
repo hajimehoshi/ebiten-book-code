@@ -17,9 +17,7 @@ func update(screen *ebiten.Image) error {
 	// 2番目の引数の彩度を0にして白黒にする。
 	op := &ebiten.DrawImageOptions{}
 	op.ColorM.ChangeHSV(0, 0, 1)
-	if err := screen.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImage, op)
 	return nil
 }
 

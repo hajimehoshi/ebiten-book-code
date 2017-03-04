@@ -71,9 +71,7 @@ func update(screen *ebiten.Image) error {
 	// ImagePartsとしてfourPartsを指定する。
 	op := &ebiten.DrawImageOptions{}
 	op.ImageParts = &fourParts{gophersImage}
-	if err := screen.DrawImage(gophersImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(gophersImage, op)
 	return nil
 }
 

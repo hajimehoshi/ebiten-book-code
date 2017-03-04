@@ -27,9 +27,7 @@ func update(screen *ebiten.Image) error {
 		op.ColorM.ChangeHSV(0, 5.0/15.0, 1)
 		op.ColorM.Translate(2.0/15.0, -2.0/15.0, -4.0/15.0, 0)
 	}
-	if err := screen.DrawImage(gophersImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(gophersImage, op)
 	return nil
 }
 

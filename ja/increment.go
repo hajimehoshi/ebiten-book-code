@@ -16,9 +16,7 @@ func update(screen *ebiten.Image) error {
 		return nil
 	}
 	msg := fmt.Sprintf("%d", i)
-	if err := ebitenutil.DebugPrint(screen, msg); err != nil {
-		return err
-	}
+	ebitenutil.DebugPrint(screen, msg)
 	return nil
 }
 

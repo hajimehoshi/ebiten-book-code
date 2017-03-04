@@ -20,9 +20,7 @@ func update(screen *ebiten.Image) error {
 		op := &ebiten.DrawImageOptions{}
 		op.GeoM.Translate(float64(i)*50, 0)
 		op.ColorM.RotateHue(float64(a) * math.Pi / 180)
-		if err := screen.DrawImage(ebitenImage, op); err != nil {
-			return err
-		}
+		screen.DrawImage(ebitenImage, op)
 	}
 	return nil
 }

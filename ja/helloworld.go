@@ -11,9 +11,7 @@ func update(screen *ebiten.Image) error {
 	if ebiten.IsRunningSlowly() {
 		return nil
 	}
-	if err := ebitenutil.DebugPrint(screen, "Hello, World!"); err != nil {
-		return err
-	}
+	ebitenutil.DebugPrint(screen, "Hello, World!")
 	return nil
 }
 

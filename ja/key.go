@@ -18,9 +18,7 @@ func update(screen *ebiten.Image) error {
 	if ebiten.IsRunningSlowly() {
 		return nil
 	}
-	if err := ebitenutil.DebugPrint(screen, "A key is pressed!"); err != nil {
-		return err
-	}
+	ebitenutil.DebugPrint(screen, "A key is pressed!")
 	return nil
 }
 

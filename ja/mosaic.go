@@ -21,26 +21,18 @@ func update(screen *ebiten.Image) error {
 	}
 	const scale = 4.0
 	// Gopherをオフスクリーンバッファに縮小して描画する。
-	if err := tmpImage.Clear(); err != nil {
-		return err
-	}
+	tmpImage.Clear()
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(1/scale, 1/scale)
-	if err := tmpImage.DrawImage(gopherImage, op); err != nil {
-		return err
-	}
+	tmpImage.DrawImage(gopherImage, op)
 	// Gopherを画面に描画する。
 	op = &ebiten.DrawImageOptions{}
-	if err := screen.DrawImage(gopherImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(gopherImage, op)
 	// オフスクリーンバッファ画面に違う位置に描画する。
 	op = &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(scale, scale)
 	op.GeoM.Translate(100, 0)
-	if err := screen.DrawImage(tmpImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(tmpImage, op)
 	return nil
 }
 

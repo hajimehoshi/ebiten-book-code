@@ -24,9 +24,7 @@ func update(screen *ebiten.Image) error {
 		return nil
 	}
 	// keyAStateが1のときにのみ文字を描画する。
-	if err := ebitenutil.DebugPrint(screen, "A key is triggered!"); err != nil {
-		return err
-	}
+	ebitenutil.DebugPrint(screen, "A key is triggered!")
 	return nil
 }
 

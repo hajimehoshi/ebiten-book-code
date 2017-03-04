@@ -23,15 +23,11 @@ func update(screen *ebiten.Image) error {
 	}
 	// オフスクリーンバッファをクリアする。
 	// screenと違い自動的にクリアされないので、明示的に呼ぶ必要がある。
-	if err := offscreenImage.Clear(); err != nil {
-		return err
-	}
+	offscreenImage.Clear()
 	// オフスクリーンバッファに対し、2個海老天の画像を描画する。
 	// うち1個は回転させる。
 	op := &ebiten.DrawImageOptions{}
-	if err := offscreenImage.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	offscreenImage.DrawImage(ebitenImage, op)
 	op = &ebiten.DrawImageOptions{}
 	w, h := ebitenImage.Size()
 	// 画像の中心を回転中心としてangle度分回転する。
@@ -39,21 +35,15 @@ func update(screen *ebiten.Image) error {
 	op.GeoM.Rotate(float64(angle) * math.Pi / 180)
 	op.GeoM.Translate(float64(w)/2, float64(h)/2)
 	op.GeoM.Translate(float64(h)/2, 0)
-	if err := offscreenImage.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	offscreenImage.DrawImage(ebitenImage, op)
 	// オフスクリーンバッファを画面に描画する。
 	op = &ebiten.DrawImageOptions{}
-	if err := screen.DrawImage(offscreenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(offscreenImage, op)
 	// 同じオフスクリーンバッファを拡大して描画する。
 	op = &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(2, 2)
 	op.GeoM.Translate(100, 100)
-	if err := screen.DrawImage(offscreenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(offscreenImage, op)
 	return nil
 }
 

@@ -21,15 +21,11 @@ func update(screen *ebiten.Image) error {
 	// 大きめに拡大したのは、フィルタの効果をわかりやすくするため。
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(4, 4)
-	if err := screen.DrawImage(ebitenImageNearest, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImageNearest, op)
 	op = &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(4, 4)
 	op.GeoM.Translate(0, 100)
-	if err := screen.DrawImage(ebitenImageLinear, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImageLinear, op)
 	return nil
 }
 

@@ -37,9 +37,7 @@ func update(screen *ebiten.Image) error {
 	for _, a := range axes {
 		msg += fmt.Sprintf("  %0.6f\n", a)
 	}
-	if err := ebitenutil.DebugPrint(screen, msg); err != nil {
-		return err
-	}
+	ebitenutil.DebugPrint(screen, msg)
 	return nil
 }
 

@@ -18,9 +18,7 @@ func update(screen *ebiten.Image) error {
 	// Scale関数でアルファ値だけ半分にする。
 	op := &ebiten.DrawImageOptions{}
 	op.ColorM.Scale(1, 1, 1, 0.5)
-	if err := screen.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImage, op)
 	return nil
 }
 

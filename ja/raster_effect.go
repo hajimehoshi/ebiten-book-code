@@ -60,9 +60,7 @@ func update(screen *ebiten.Image) error {
 	// ImagePartsとしてrasterEffectPartsを指定する。
 	op := &ebiten.DrawImageOptions{}
 	op.ImageParts = parts
-	if err := screen.DrawImage(gophersImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(gophersImage, op)
 	return nil
 }
 

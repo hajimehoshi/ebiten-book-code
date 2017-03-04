@@ -21,9 +21,7 @@ func update(screen *ebiten.Image) error {
 	}
 	// ebitenImageを画面に描画する。
 	// 第2引数であるDrawImageOptionsは今回は指定を省略する (nilを指定する)。
-	if err := screen.DrawImage(ebitenImage, nil); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImage, nil)
 	return nil
 }
 

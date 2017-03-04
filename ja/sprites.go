@@ -63,9 +63,7 @@ func update(screen *ebiten.Image) error {
 		image:     ebitenImage,
 		positions: positions,
 	}
-	if err := screen.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImage, op)
 	return nil
 }
 

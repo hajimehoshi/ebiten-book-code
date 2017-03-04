@@ -17,9 +17,7 @@ func update(screen *ebiten.Image) error {
 	// ebitenImageを位置(20, 10)画面に描画する。
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Translate(20, 10)
-	if err := screen.DrawImage(ebitenImage, op); err != nil {
-		return err
-	}
+	screen.DrawImage(ebitenImage, op)
 	return nil
 }
 
