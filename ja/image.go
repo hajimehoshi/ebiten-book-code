@@ -5,7 +5,6 @@ import (
 	// この、デコーダ登録のためだけにパッケージをインポートする手法については
 	// 標準ライブラリのimageパッケージを参照すること:
 	// https://golang.org/pkg/image/
-	// TODO: Bug fix in ebitenutil
 	_ "image/png"
 	"log"
 
