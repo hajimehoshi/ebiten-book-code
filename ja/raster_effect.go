@@ -18,7 +18,7 @@ type rasterEffectParts struct {
 
 func (r *rasterEffectParts) Update() {
 	// 角度を更新する。
-	// この更新方法で角速度が決まる。
+	// なお、この更新方法で角速度が決まる。
 	r.angle++
 	r.angle %= 360
 }
@@ -42,8 +42,7 @@ func (r *rasterEffectParts) Dst(i int) (int, int, int, int) {
 	const amplitude = 8
 	w, _ := r.image.Size()
 	// 波形の位相。
-	// 位相の計算にiを使うことで、角行ごとに微妙に異なる
-	// ズレを生じさせる。
+	// 位相の計算にiを使うことで、各行ごとに微妙に異なるズレを生じさせる。
 	a := r.angle + 4*i
 	// ズレdを計算する。
 	d := int(math.Floor(math.Sin(float64(a)*math.Pi/180) * amplitude))
