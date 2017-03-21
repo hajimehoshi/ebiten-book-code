@@ -29,7 +29,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := ebiten.Run(update, 320, 240, 2, "Transparent"); err != nil {
+	if err := ebiten.Run(update, 320, 240, 2, "Translucent"); err != nil {
 		log.Fatal(err)
 	}
 }
